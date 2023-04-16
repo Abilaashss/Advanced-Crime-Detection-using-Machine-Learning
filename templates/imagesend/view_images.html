@@ -1,0 +1,13 @@
+{% load static %}
+
+{% for i in data %}
+
+<img src = "{{ i.image.url }}" />
+<br>
+<br>
+
+<div>{{ i.text }}</div>
+<br>
+
+<br>
+{% endfor %} 

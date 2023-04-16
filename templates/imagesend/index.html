@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Crime data analysis</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+    <style>
+      .emergency {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 40px;
+        background-color: red;
+        color: white;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1> CRIME FINDER </h1>
+      <section class="page-title breadcrumb-area" style="background-image:url('https://www.sifs.in/assets/front/img/5f2091137d09f.jpg'); -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; padding-bottom:220px;">
+        <div class="auto-container">
+			
+			<h1>&nbsp;</h1>
+		
+			
+        </div>
+        
+    </section>
+      <span class="emergency">SOS</span>
+      <nav>
+        <ul>
+          <li><a href="https://new-one.umeshgjh.repl.co/">Home</a></li>
+          <li><a href="https://about-us-webpage.umeshgjh.repl.co/">About</a></li>
+          <li><a href="{% url 'imagesend:view_images' %}">Crime Database</a></li>
+          <li><a href="https://location-webpage.umeshgjh.repl.co">My Location</a></li>
+          <li><a href="https://www.sifs.in/blog-details/crime-scene-investigation-rules:-a-simplified-guide/81">Rules</a></li>
+          <li><a href="https://cybercrime.gov.in/webform/Crime_NodalGrivanceList.aspx">Contact</a></li>
+
+          {% if request.user.is_authenticated %}
+          <li><a href="{% url 'imagesend:logout' %}">Logout</a></li>
+          {% else %}
+
+          <li><a href="{% url 'imagesend:login' %}">Login</a></li>
+          <li><a href="{% url 'web3auth:web3auth_signup' %}">SignUp</a></li>
+
+          {% endif %}
+
+
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <section>
+          <h2>Features</h2>
+          <ul>
+            <li><strong>Emergency reach out:</strong> <br> Case of an emergency, the app allows users to quickly and easily reach out to emergency services such as the police, fire department, and ambulance.</li>
+            <li><strong>Crime finder:</strong><br> The app has a feature that helps users find crime hotspots and high-risk areas in their vicinity so that they can take necessary precautions.</li>
+            <li><strong>Rules to be followed in a crime scene:</strong><br> The app provides guidelines on how to behave and what actions to take in a crime scene to avoid tampering with evidence or putting oneself in danger.</li>
+            <li><strong>Real-time crime updates:</strong> <br>The app keeps users informed about crime incidents and alerts them to any potential danger in their area in real-time.</li>
+            <li><strong>Anonymous reporting:</strong> <br>The app allows users to report crimes anonymously, ensuring their safety and privacy while still helping to keep their community safe.</li>
+          </ul>
+        </section>
+        
+      <section>
+        <h2>Contact us if you find any error in the crime data : </h2>
+        <form>
+          <label>Name:</label>
+          <input type="text" name="name">
+          <label>Email:</label>
+          <input type="email" name="email">
+          <label>Error:</label>
+          <textarea name="message"></textarea>
+          <input type="submit" value="Send">
+        </form>
+      </section>
+      <h2>About Us</h2>
+        <p>We are a team of 4 who has developed a solution to find crimes in your area</p>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 Alpha 404's website. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
