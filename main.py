@@ -6,7 +6,7 @@ from transformers import ViTFeatureExtractor, ViTForImageClassification
 import requests
 
 # Load the pre-trained model and feature extractor
-model_path = '/home/akhil/Downloads/hack/'
+model_path = '/home/Akhil/Documents/kk/Crime-Detection-using-Machine-Learning/'
 model = ViTForImageClassification.from_pretrained(model_path)
 feature_extractor = ViTFeatureExtractor.from_pretrained(model_path)
 
